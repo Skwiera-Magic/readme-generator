@@ -17,7 +17,7 @@ let { projectTitle, projectDescription, license, Installation, tests, LinkedInUR
             type: 'list',
             name: 'license',
             message: 'What license do you want?',
-            choices: ['HTML', 'CSS', 'JS', 'ES6', 'Node.js'],
+            choices: ['Apache 2.0', 'Eclipse 1.0', 'MIT License', 'Mozilla Public License 2.0', 'WTFPL'],
         },
         {
             type: 'input',
@@ -50,7 +50,7 @@ ${projectTitle}
 ${projectDescription}
 ## Table of Contents
 ## License
-${license}
+${generateBadge(license)}
 ## How to install
 ${Installation}
 ## tests
@@ -59,3 +59,21 @@ ${tests}
 ![${LinkedInURL}], ![${GitHubURL}]`
 
 await fs.writeFile("README.md", readmeText)
+
+function generateBadge(license) {
+    if (license === "Apache 2.0") {
+        return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    }
+    else if (license === "Eclipse 1.0") {
+        return "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)"
+    }
+    else if (license === "MIT License") {
+        return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    }
+    else if (license === "<Mozilla Public License 2.0>") {
+        return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+    }
+    else if (license === "WTFPL") {
+        return "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)"
+    }
+}
