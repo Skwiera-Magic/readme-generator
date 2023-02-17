@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
-let { projectTitle, projectDescription, license, Installation, tests, LinkedInURL, GitHubURL} = await inquirer
+let { projectTitle, projectDescription, license, installation, tests, email, GitHubURL} = await inquirer
     .prompt([
         {
             type: 'input',
@@ -17,7 +17,7 @@ let { projectTitle, projectDescription, license, Installation, tests, LinkedInUR
             type: 'list',
             name: 'license',
             message: 'What license do you want?',
-            choices: ['Apache 2.0', 'Eclipse 1.0', 'MIT License', 'Mozilla Public License 2.0', 'WTFPL'],
+            choices: ['Apache 2.0', 'Eclipse 1.0', 'MIT License', 'WTFPL'],
         },
         {
             type: 'input',
@@ -31,13 +31,13 @@ let { projectTitle, projectDescription, license, Installation, tests, LinkedInUR
         },
         {
             type:'input',
-            name:'LinkedInURL',
-            message: 'What is your LinkedIn URL?'
+            name:'email',
+            message: 'What is your email address?'
         },
         {
             type:'input',
             name:'GitHubURL',
-            message: 'What is your GitHub URL?'
+            message: 'What is your GitHub username?'
         }
     ])
 
@@ -49,14 +49,28 @@ ${projectTitle}
 ## Project description
 ${projectDescription}
 ## Table of Contents
+- [Overview](#overview)
+  - [License](#license)
+  - [Installation](#installation)
+  - [Tests](#tests)
+  - [Usage](#usage)
+  - [Links](#links)
+- [Contributing](#contributing)
+- [Questions](#questions)
 ## License
 ${generateBadge(license)}
-## How to install
-${Installation}
-## tests
+## Installation
+${installation}
+## Usage
+// todo
+## Tests
 ${tests}
 ## Links:
-![${LinkedInURL}], ![${GitHubURL}]`
+Email: [${email}](${email}), GitHub: [${GitHubURL}](${GitHubURL})
+## Contributing
+// todo
+## Questions
+// todo`
 
 await fs.writeFile("README.md", readmeText)
 
@@ -69,9 +83,6 @@ function generateBadge(license) {
     }
     else if (license === "MIT License") {
         return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-    }
-    else if (license === "<Mozilla Public License 2.0>") {
-        return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
     }
     else if (license === "WTFPL") {
         return "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)"
