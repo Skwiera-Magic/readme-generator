@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
-let { projectTitle, projectDescription, license, installation, tests, email, GitHubURL} = await inquirer
+let { projectTitle, projectDescription, license, installation, usage, tests, email, gitHubUsername, contributing, questions} = await inquirer
     .prompt([
         {
             type: 'input',
@@ -21,13 +21,18 @@ let { projectTitle, projectDescription, license, installation, tests, email, Git
         },
         {
             type: 'input',
-            name: 'Installation',
+            name: 'installation',
             message: 'How do you install your app?'
         },
         {
             type:'input',
+            name:'usage',
+            message: 'How to use your project?'
+        },
+        {
+            type:'input',
             name:'tests',
-            message: 'What is your tests?'
+            message: 'What are your tests?'
         },
         {
             type:'input',
@@ -36,8 +41,18 @@ let { projectTitle, projectDescription, license, installation, tests, email, Git
         },
         {
             type:'input',
-            name:'GitHubURL',
+            name:'gitHubUsername',
             message: 'What is your GitHub username?'
+        },
+        {
+            type:'input',
+            name:'contributing',
+            message: 'How to contribute to your project?'
+        },
+        {
+            type:'input',
+            name:'questions',
+            message: 'Frequently asked questions'
         }
     ])
 
@@ -62,15 +77,16 @@ ${generateBadge(license)}
 ## Installation
 ${installation}
 ## Usage
-// todo
+${usage}
 ## Tests
 ${tests}
 ## Links:
-Email: [${email}](${email}), GitHub: [${GitHubURL}](${GitHubURL})
+Email: [${email}](${email}), GitHub: [${gitHubUsername}](https://github.com/${gitHubUsername})
 ## Contributing
-// todo
+${contributing}
 ## Questions
-// todo`
+${questions}
+`
 
 await fs.writeFile("README.md", readmeText)
 
