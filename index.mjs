@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
-let { projectTitle, projectDescription, license, installation, usage, tests, email, gitHubUsername, contributing, questions} = await inquirer
+let { projectTitle, projectDescription, license, installation, usage, tests, email, gitHubUsername, contributing, questions } = await inquirer
     .prompt([
         {
             type: 'input',
@@ -25,42 +25,35 @@ let { projectTitle, projectDescription, license, installation, usage, tests, ema
             message: 'How do you install your app?'
         },
         {
-            type:'input',
-            name:'usage',
+            type: 'input',
+            name: 'usage',
             message: 'How to use your project?'
         },
         {
-            type:'input',
-            name:'tests',
+            type: 'input',
+            name: 'tests',
             message: 'What are your tests?'
         },
         {
-            type:'input',
-            name:'email',
+            type: 'input',
+            name: 'email',
             message: 'What is your email address?'
         },
         {
-            type:'input',
-            name:'gitHubUsername',
+            type: 'input',
+            name: 'gitHubUsername',
             message: 'What is your GitHub username?'
         },
         {
-            type:'input',
-            name:'contributing',
+            type: 'input',
+            name: 'contributing',
             message: 'How to contribute to your project?'
-        },
-        {
-            type:'input',
-            name:'questions',
-            message: 'Frequently asked questions'
         }
     ])
 
 
-let readmeText = 
-`# README
-## Project Title
-${projectTitle}
+let readmeText =
+    `# ${projectTitle}
 ## Project description
 ${projectDescription}
 ## Table of Contents
@@ -80,12 +73,11 @@ ${installation}
 ${usage}
 ## Tests
 ${tests}
-## Links:
-Email: [${email}](${email}), GitHub: [${gitHubUsername}](https://github.com/${gitHubUsername})
 ## Contributing
 ${contributing}
 ## Questions
-${questions}
+You can contact me on my email: [${email}](${email})
+Or you can check my other porjects on GitHub: [${gitHubUsername}](https://github.com/${gitHubUsername})
 `
 
 await fs.writeFile("README.md", readmeText)
