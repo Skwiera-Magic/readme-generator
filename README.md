@@ -22,4 +22,4 @@ There were no testing frameworks used for this projects, only manual tests.
 Feel free to contribute at any moment :)
 ## Questions
 You can contact me on my email: [mckskwiera@gmail.com](mckskwiera@gmail.com)
-Or you can check my other porjects on GitHub: [skwiera-magic](https://github.com/skwiera-magic)
+Or you can check my other projects on GitHub: [skwiera-magic](https://github.com/skwiera-magic)
