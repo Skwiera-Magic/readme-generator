@@ -77,10 +77,10 @@ ${tests}
 ${contributing}
 ## Questions
 You can contact me on my email: [${email}](${email})
-Or you can check my other porjects on GitHub: [${gitHubUsername}](https://github.com/${gitHubUsername})
+Or you can check my other projects on GitHub: [${gitHubUsername}](https://github.com/${gitHubUsername})
 `
 
-await fs.writeFile("README.md", readmeText)
+await fs.writeFile("generated-README.md", readmeText)
 
 function generateBadge(license) {
     if (license === "Apache 2.0") {

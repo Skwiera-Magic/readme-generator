@@ -15,11 +15,11 @@ Have you ever had a situation where all your work on the project went nice and s
 ## Installation
 All you need to do is type node index.mjs in your terminal and it will automatically download and install required files.
 ## Usage
-After initializing the app it will ask series of questions about your project. When all of them are answered there will be new README.md waiting for you.
+After initializing the app it will ask series of questions about your project. When all of them are answered there will be new README.md waiting for you. Here is a link to video showing all neccesary steps: https://watch.screencastify.com/v/ugTJ3t0nv0RrfFN5dbNchttps://watch.screencastify.com/v/ugTJ3t0nv0RrfFN5dbNc
 ## Tests
 There were no testing frameworks used for this projects, only manual tests.
 ## Contributing
 Feel free to contribute at any moment :)
 ## Questions
 You can contact me on my email: [mckskwiera@gmail.com](mckskwiera@gmail.com)
-Or you can check my other porjects on GitHub: [skwiera-magic](https://github.com/skwiera-magic)
+Or you can check my other projects on GitHub: [skwiera-magic](https://github.com/skwiera-magic)
