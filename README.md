@@ -11,7 +11,7 @@ Have you ever had a situation where all your work on the project went nice and s
 - [Contributing](#contributing)
 - [Questions](#questions)
 ## License
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+None
 ## Installation
 All you need to do is type node index.mjs in your terminal and it will automatically download and install required files.
 ## Usage
