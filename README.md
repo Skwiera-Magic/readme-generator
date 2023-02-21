@@ -15,7 +15,7 @@ Have you ever had a situation where all your work on the project went nice and s
 ## Installation
 All you need to do is type node index.mjs in your terminal and it will automatically download and install required files.
 ## Usage
-After initializing the app it will ask series of questions about your project. When all of them are answered there will be new README.md waiting for you. Here is a link to video showing all neccesary steps: https://watch.screencastify.com/v/ugTJ3t0nv0RrfFN5dbNchttps://watch.screencastify.com/v/ugTJ3t0nv0RrfFN5dbNc
+After initializing the app it will ask series of questions about your project. When all of them are answered there will be new README.md waiting for you. Here is a link to video showing all neccesary steps: https://drive.google.com/file/d/1A5C9_bUYfwR6xbK-QHJ5Rm61KXD6XN3y/view
 ## Tests
 There were no testing frameworks used for this projects, only manual tests.
 ## Contributing
